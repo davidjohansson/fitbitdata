@@ -1,1 +1,1 @@
-java -jar build/libs/httpcachingjavadojo.jar
+web: java -jar -Dport=$PORT build/libs/httpcachingjavadojo.jar
