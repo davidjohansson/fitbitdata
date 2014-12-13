@@ -1,1 +1,1 @@
-./gradlew bootRun
+java -jar build/libs/httpcachingjavadojo.jar
