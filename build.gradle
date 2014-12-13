@@ -33,6 +33,9 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
 }
 
+task stage { //used by heroku
+    dependsOn assemble
+}
 task wrapper(type: Wrapper) {
     description = "Generates gradlew scripts"
     gradleVersion = "2.1"
