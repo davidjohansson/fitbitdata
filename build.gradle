@@ -1,0 +1,46 @@
+ext {
+    springBootVersion = '1.1.8.RELEASE'
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        maven {
+            url 'http://maven.springframework.org/release'
+        }
+        maven {
+            url 'http://maven.springframework.org/milestone'
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.6.RELEASE")
+    }
+}
+
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
+}
+
+task wrapper(type: Wrapper) {
+    description = "Generates gradlew scripts"
+    gradleVersion = "2.1"
+
+    doLast() {
+        def gradleOpts = "-Xmx512m -Dfile.encoding=utf8"
+        File wrapperFile = file("gradlew")
+        wrapperFile.text = wrapperFile.text.replace("DEFAULT_JVM_OPTS=",
+                "GRADLE_OPTS=\"$gradleOpts \$GRADLE_OPTS\"\nDEFAULT_JVM_OPTS=")
+    }
+}
