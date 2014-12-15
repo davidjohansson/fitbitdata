@@ -17,7 +17,7 @@ public class HttpCachingController extends WebContentGenerator{
 	@RequestMapping("/hello")
 	public GoodStuff hello(HttpServletResponse response) {
 		response.setHeader("Cache-Control", "max-age=10");
-		return new GoodStuff(counter.getAndIncrement(), "a name");
+		return new GoodStuff(counter.getAndIncrement(), "a new name");
 	}
 
 }
