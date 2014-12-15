@@ -1,1 +1,1 @@
-web: java -jar -Dport=$PORT build/libs/dojohttpcachingjava.jar
+web: java -jar build/libs/dojohttpcachingjava.jar -Dport=$PORT
