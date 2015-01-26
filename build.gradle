@@ -36,7 +36,7 @@ dependencies {
 }
 
 task stage { //used by heroku
-    dependsOn clean, build, assemble
+    dependsOn installApp
 }
 task wrapper(type: Wrapper) {
     description = "Generates gradlew scripts"
