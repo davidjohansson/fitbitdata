@@ -31,6 +31,8 @@ buildscript {
 
 dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
+    compile 'io.reactivex:rxjava:1.0.0'
+    testCompile 'junit:junit:4.10'
 }
 
 task stage { //used by heroku
