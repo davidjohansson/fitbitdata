@@ -35,9 +35,20 @@ dependencies {
     testCompile 'junit:junit:4.10'
 }
 
-task stage { //used by heroku
-    dependsOn assemble, installApp
+
+task stage(type: Copy, dependsOn: [clean, build]) {
+    from jar.archivePath
+    into project.rootDir 
+    rename {
+        'app.jar'
+    }
 }
+stage.mustRunAfter(clean)
+
+clean << {
+    project.file('app.jar').delete()
+}
+
 task wrapper(type: Wrapper) {
     description = "Generates gradlew scripts"
     gradleVersion = "2.1"
