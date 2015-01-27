@@ -56,7 +56,7 @@ public class ObservableTest {
 	@Test
 	public void shouldUseSchedulerOnSameThreadToSubscribe() throws Exception{
 		Observable<String> obs = Observable.just("1", "2", "3", "4", "5");
-
+		
 		System.out.println("Starting on " + geturrentThreadName());
 		Thread.sleep(3000);
 

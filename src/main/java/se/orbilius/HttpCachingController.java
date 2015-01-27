@@ -12,7 +12,6 @@ import org.springframework.web.servlet.support.WebContentGenerator;
 public class HttpCachingController extends WebContentGenerator{
 
     private final AtomicLong counter = new AtomicLong();
-
 	
 	@RequestMapping("/hello")
 	public GoodStuff hello(HttpServletResponse response) {
